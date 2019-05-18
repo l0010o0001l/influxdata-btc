@@ -1,0 +1,12 @@
+version: '3'
+services:
+  db:
+    image: influxdb
+    ports:
+      - "8086:8086"
+  ui:
+    image: quay.io/influxdb/chronograf
+    ports:
+      - "8888:8888"
+    depends_on:
+      - db
